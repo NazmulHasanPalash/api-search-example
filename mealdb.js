@@ -1,3 +1,11 @@
+const searchButton = document.getElementById("button-search");
+const searchField = document.getElementById("search-field");
+
+searchField.addEventListener("keypress", function (event) {
+    // event.preventDefault();
+    if (event.key == "Enter")
+        searchButton.click();
+});
 const searchFood = async () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
@@ -73,7 +81,7 @@ const displayMealDetail = meal => {
     <div class="card-body">
     <h5 class="card-title">${meal.strMeal}</h5>
         <p class="card-text">${meal.strInstructions.slice(0, 150)}</p>
-        <a href="${meal.strYoutube}" class="btn btn-primary">Go Youtub</a>
+        <a href="${meal.strYoutube}" class="btn btn-primary">searchButton Youtub</a>
     </div>
     `;
     mealDetails.appendChild(div);
